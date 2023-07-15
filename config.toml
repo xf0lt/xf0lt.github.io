@@ -1,0 +1,62 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'xf0lt'
+
+relativeURLs = true
+uglyURLs = true
+
+#theme
+themeDir = '../..'
+theme = 'hugo-blog-awesome'
+
+#icon sosial 
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/xf0lt"
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/Trysked1"
+
+[[params.socialIcons]]
+name = "Hackthebox"
+url = "https://app.hackthebox.com/profile/834790"
+
+[[params.socialIcons]]
+name = "Telegram"
+url = "https://t.me/xf0lt"
+
+# [[params.socialIcons]]
+# name = "linkedin"
+# url = "index.xml"
+
+#params author
+[params.author]
+  avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "xf0lt"
+  name = "xf0lt"
+  description = "Penetration Tester | Cyber Security Enthusiast"
+
+#enable or disable go to top button 
+[params]
+goToTop = true
+
+[menu]
+  [[menu.main]]
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    # pageRef="/"
+    # name = 'Home'
+    # url = '/'
+    # weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/pages'
+    weight = 30

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on xf0lt</title>
+    <link>/pages.html</link>
+    <description>Recent content in Pages on xf0lt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>/pages/about.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/about.html</guid>
+      <description>I am a student currently studying Economic Management, with a passion for cybersecurity and linux. This is my personal blog site, which I set up with a view to document my journey learning cybersecurity through articles on topics I learn. Besides the site will also hold some other tech stuff that I might be interested in and take up as a project.
+This blog has been setup as a means of documenting my journey in the field and also to write posts on my findings and learnings, as I beleive, documenting what I do or learn is much helpful to me to have a clear understanding of the topic in scope, and also it might help others.</description>
+    </item>
+    
+  </channel>
+</rss>

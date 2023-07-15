@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xf0lt</title>
+    <link>/</link>
+    <description>Recent content on xf0lt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Jul 2023 09:14:13 +0700</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tryhackme - Wonderland</title>
+      <link>/posts/wonderland.html</link>
+      <pubDate>Fri, 14 Jul 2023 09:14:13 +0700</pubDate>
+      
+      <guid>/posts/wonderland.html</guid>
+      <description>DISCLAIMER Any actions and or activities related to the material contained within this Website is solely your responsibility. This site contains materials that can be potentially damaging or dangerous. If you do not fully understand something on this site, then GO OUT OF HERE! Refer to the laws in your province/country before accessing, using, or in any other way utilizing these materials.These materials are for educational and research purposes only.</description>
+    </item>
+    
+    <item>
+      <title>New Posts</title>
+      <link>/posts/new-posts.html</link>
+      <pubDate>Fri, 14 Jul 2023 08:52:55 +0700</pubDate>
+      
+      <guid>/posts/new-posts.html</guid>
+      <description>&lt;h1 id=&#34;hello-freind&#34;&gt;Hello freind&lt;/h1&gt;
+&lt;p&gt;this is new post my web with hugo  tes image&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/bodIT0H.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hahahha
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;description-sample-article-showcasing-basic-markdown-syntax-and-formatting-for-html-elements&#34;&gt;title: Markdown Syntax Guide
+date: 2023-02-11
+author: Hugo Authors
+description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.&lt;/h2&gt;
+&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>/pages/about.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/about.html</guid>
+      <description>I am a student currently studying Economic Management, with a passion for cybersecurity and linux. This is my personal blog site, which I set up with a view to document my journey learning cybersecurity through articles on topics I learn. Besides the site will also hold some other tech stuff that I might be interested in and take up as a project.
+This blog has been setup as a means of documenting my journey in the field and also to write posts on my findings and learnings, as I beleive, documenting what I do or learn is much helpful to me to have a clear understanding of the topic in scope, and also it might help others.</description>
+    </item>
+    
+  </channel>
+</rss>
