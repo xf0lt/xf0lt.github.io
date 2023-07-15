@@ -4,7 +4,7 @@ date: 2023-07-14T09:14:13+07:00
 # tags: [hugo,content,static site generator]
 ---
 
-![image](/images/wonderland.jpeg)
+![image](/images/wonderland/wonderland.jpeg)
 
 # **DISCLAIMER**
 ---
