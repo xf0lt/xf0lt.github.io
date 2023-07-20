@@ -1,7 +1,6 @@
 ---
 title: "Tryhackme - Game Server"
 date: 2023-07-15T15:59:25+07:00
-draft: false
 ---
 
 # Tryhackme - Game server

